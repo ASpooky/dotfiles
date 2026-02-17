@@ -18,6 +18,17 @@ dotfiles/
             └── profile.ps1             → ~/.config/powershell/profile.ps1
 ```
 
+## 前提
+
+- **Nerd Font** が必要（Starship の Tokyo Night プリセットがアイコンを使用）
+  - WSL2: `https://www.nerdfonts.com/` からダウンロードしてインストール
+  - Windows: `winget install JanDeDobbeleer.OhMyPosh` 経由、または手動で
+    ```powershell
+    winget search NerdFont   # 利用可能なフォントを検索
+    winget install --id=DEVCOM.JetBrainsMonoNerdFont
+    ```
+  - ターミナルのフォント設定を Nerd Font（例: `JetBrainsMono Nerd Font`）に変更する
+
 ## セットアップ
 
 ### WSL2 (Ubuntu)
