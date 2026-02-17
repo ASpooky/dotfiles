@@ -42,19 +42,21 @@ chsh -s $(which zsh)
 
 新しいターミナルを開けば反映される。
 
-### Windows (PowerShell)
+### Windows (PowerShell 5.1)
+
+管理者権限の PowerShell で実行する。
 
 ```powershell
 # 1. Starship をインストール
 winget install Starship.Starship
 
 # 2. リポジトリをクローン
-git clone https://github.com/<your-username>/dotfiles.git $HOME\dotfiles
+git clone https://github.com/ASpooky/dotfiles.git $HOME\dotfiles
 
-# 3. profile.ps1 をシンボリックリンク (管理者権限で実行)
-New-Item -ItemType Directory -Path "$HOME\.config\powershell" -Force
+# 3. profile.ps1 をシンボリックリンク
+New-Item -ItemType Directory -Path "$HOME\Documents\WindowsPowerShell" -Force
 New-Item -ItemType SymbolicLink `
-  -Path "$HOME\.config\powershell\profile.ps1" `
+  -Path "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" `
   -Target "$HOME\dotfiles\powershell\.config\powershell\profile.ps1"
 
 # 4. starship.toml をシンボリックリンク
@@ -65,6 +67,9 @@ New-Item -ItemType SymbolicLink `
 ```
 
 PowerShell を再起動すれば反映される。
+
+> **Note**: PowerShell 7 を使う場合はステップ 3 のパスを
+> `$HOME\.config\powershell\profile.ps1` に変更する。
 
 ## 設定の追加・変更
 

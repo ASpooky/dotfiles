@@ -11,7 +11,9 @@ error_symbol = "[>](bold red)"
 
 [directory]
 truncation_length = 3
+truncate_to_repo = false
 style = "bold cyan"
+read_only = " 🔒"
 
 [git_branch]
 symbol = " "
@@ -32,6 +34,7 @@ format = "[$symbol$version]($style) "
 style = "bold green"
 
 [cmd_duration]
-min_time = 3000
-format = "[$duration]($style) "
-style = "yellow"
+min_time = 500
+show_milliseconds = true
+format = "[took $duration]($style) "
+style = "bold yellow"
