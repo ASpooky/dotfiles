@@ -34,23 +34,12 @@ dotfiles/
 ### WSL2 (Ubuntu)
 
 ```bash
-# 1. 必要なパッケージをインストール
-sudo apt update && sudo apt install -y zsh stow git curl
-
-# 2. Starship をインストール
-curl -sS https://starship.rs/install.sh | sh
-
-# 3. リポジトリをクローン
 git clone https://github.com/ASpooky/dotfiles.git ~/dotfiles
-
-# 4. Stow でシンボリックリンクを作成
 cd ~/dotfiles
-stow zsh starship
-
-# 5. デフォルトシェルを zsh に変更
-chsh -s $(which zsh)
+bash setup-linux.sh
 ```
 
+zsh, stow, Starship のインストールとシンボリックリンク作成を自動で行う。
 新しいターミナルを開けば反映される。
 
 ### Windows (PowerShell 5.1)
@@ -58,29 +47,16 @@ chsh -s $(which zsh)
 管理者権限の PowerShell で実行する。
 
 ```powershell
-# 1. Starship をインストール
-winget install Starship.Starship
-
-# 2. リポジトリをクローン
 git clone https://github.com/ASpooky/dotfiles.git $HOME\dotfiles
-
-# 3. profile.ps1 をシンボリックリンク
-New-Item -ItemType Directory -Path "$HOME\Documents\WindowsPowerShell" -Force
-New-Item -ItemType SymbolicLink `
-  -Path "$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" `
-  -Target "$HOME\dotfiles\powershell\.config\powershell\profile.ps1"
-
-# 4. starship.toml をシンボリックリンク
-New-Item -ItemType Directory -Path "$HOME\.config" -Force
-New-Item -ItemType SymbolicLink `
-  -Path "$HOME\.config\starship.toml" `
-  -Target "$HOME\dotfiles\starship\.config\starship.toml"
+cd $HOME\dotfiles
+.\setup-windows.ps1
 ```
 
+Starship, posh-git, Nerd Font のインストールとシンボリックリンク作成を自動で行う。
 PowerShell を再起動すれば反映される。
 
-> **Note**: PowerShell 7 を使う場合はステップ 3 のパスを
-> `$HOME\.config\powershell\profile.ps1` に変更する。
+> **Note**: PowerShell 7 を使う場合は `profile.ps1` のリンク先を
+> `$HOME\.config\powershell\profile.ps1` に手動で変更する。
 
 ## 設定の追加・変更
 
