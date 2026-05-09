@@ -24,6 +24,19 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history = {
+      size = 100000;
+      save = 100000;
+      share = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+      extended = true;
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.starship = {
