@@ -8,6 +8,7 @@
     bat
     eza
     fzf
+    nodejs
   ];
 
   programs.git = {
@@ -32,6 +33,9 @@
       ignoreSpace = true;
       extended = true;
     };
+    initContent = ''
+      [ -f ~/.secrets ] && source ~/.secrets
+    '';
   };
 
   programs.direnv = {
