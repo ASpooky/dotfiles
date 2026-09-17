@@ -1,0 +1,7 @@
+aaron-bond.better-comments
+christian-kohler.path-intellisense
+eamodio.gitlens
+editorconfig.editorconfig
+esbenp.prettier-vscode
+ms-ceintl.vscode-language-pack-ja
+usernamehw.errorlens

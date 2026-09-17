@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.telemetry.enabled": false,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.hovers.currentLine.enabled": true,
+    "gitlens.codeLens.enabled": true,
+    "gitlens.statusBar.enabled": true,
+    "gitlens.blame.avatars": false
+}

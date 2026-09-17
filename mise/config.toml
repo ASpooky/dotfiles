@@ -1,0 +1,9 @@
+[tools]
+node = "lts"
+go = "latest"
+python = "latest"
+starship = "latest"
+direnv = "latest"
+uv = "latest"
+fzf = "latest"
+fd = "latest"
