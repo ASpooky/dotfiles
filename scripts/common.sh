@@ -5,7 +5,7 @@ set -euo pipefail
 repo_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 backup_dir=""
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:${MISE_DATA_DIR:-$HOME/.local/share/mise}/shims:$PATH"
 platform="$(uname -s)"
 mac_app_dirs=(/Applications "$HOME/Applications")
 case "$platform" in

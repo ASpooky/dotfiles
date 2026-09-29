@@ -14,6 +14,16 @@ git clone https://github.com/ASpooky/dotfiles.git ~/dotfiles
 - macOSではRaycastも自動導入される。初回はアプリを開いてセットアップする。
 - cmux・VS Codeは事前にインストール。未導入ならスキップされるので、後から入れて再実行してもOK。
 - アイコン表示にはターミナルでNerd Fontを選ぶ。
+- ツールは基本mise(`mise/config.toml`)で入れる。miseで入らないものだけ`brew/Brewfile`(Homebrewが無ければスキップ)。
+
+PCごとの設定はリポジトリに入れず、次のファイルに書く：
+
+| ファイル | 用途 |
+|---|---|
+| `~/.zshrc.local` | PC固有のPATH・alias・環境変数 |
+| `~/.secrets` | トークン等の秘密情報 |
+| `~/.gitconfig` | `user.name`・`user.email` |
+| `~/.config/mise/conf.d/*.toml` | PC固有のツール・バージョン |
 
 更新するとき：
 
