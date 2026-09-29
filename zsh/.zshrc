@@ -30,6 +30,10 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
+[[ ! -r "$HOME/.zsh_functions.zsh" ]] || source "$HOME/.zsh_functions.zsh"
+# Machine-specific settings that stay out of the repository.
+[[ ! -r "$HOME/.zshrc.local" ]] || source "$HOME/.zshrc.local"
+
 # Load after completion, hooks, and other plugins.
 if [[ -r "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
