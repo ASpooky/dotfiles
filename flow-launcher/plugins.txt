@@ -1,0 +1,3 @@
+# Third-party Flow Launcher plugins, by ID from the official plugin manifest.
+# After installing plugins with `pm install`, regenerate with flow-launcher/export.ps1.
+525995402BEF4A8CA860D92F6D108092 # VS Code Workspaces
