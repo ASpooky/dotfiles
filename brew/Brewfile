@@ -1,0 +1,8 @@
+# Only tools that mise cannot install; everything else lives in mise/config.toml.
+brew "git"
+brew "git-secrets"
+brew "graphviz"
+brew "libpq"
+brew "mysql"
+brew "redis"
+brew "tree"

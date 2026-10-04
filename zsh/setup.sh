@@ -23,6 +23,7 @@ install_plugin zsh-autosuggestions
 install_plugin zsh-syntax-highlighting
 
 link_config "$repo_dir/zsh/.zshrc" "${ZDOTDIR:-$HOME}/.zshrc"
+link_config "$repo_dir/zsh/.zsh_functions.zsh" "$HOME/.zsh_functions.zsh"
 printf 'Open a new zsh terminal or run: exec zsh -l\n'
 if [[ "${SHELL:-}" != *"/zsh" ]]; then
   printf 'To make zsh your login shell, run: chsh -s "%s"\n' "$(command -v zsh)"

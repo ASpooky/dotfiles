@@ -1,0 +1,6 @@
+# Identity lives in ~/.gitconfig so each machine can use its own name and email.
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
