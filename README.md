@@ -30,3 +30,25 @@ PCごとの設定はリポジトリに入れず、次のファイルに書く：
 ```sh
 cd ~/dotfiles && git pull && ./setup.sh
 ```
+
+## Windows
+
+GlazeWM（タイル型WM、Zebar同梱）とFlow Launcherをwingetで入れて設定を配置する。PowerShellで実行する（WSL内のリポジトリでもOK）。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File \\wsl.localhost\Ubuntu\home\<user>\dotfiles\setup.ps1
+```
+
+- 設定はリンクではなくコピーで配置する（開発者モード不要、ログイン直後にWSLが起動していなくても読める）。差分がある既存設定は`~\.dotfiles-backups\`へ退避。
+- GlazeWMはスタートアップに登録される。Flow Launcherは自身の設定で自動起動する。
+- Flow Launcherのサードパーティプラグインは`flow-launcher/plugins.txt`のIDから導入する。
+- 何度実行してもよい。
+
+アプリ側で設定を変えたら、リポジトリに書き戻してコミットする：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\glazewm\export.ps1
+powershell -ExecutionPolicy Bypass -File .\flow-launcher\export.ps1  # ウィンドウ位置などPC依存の値は除外される
+```
+
+テスト（Pester 3.4+）：`Invoke-Pester .\tests`
